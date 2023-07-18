@@ -28,7 +28,7 @@ function createMap() {
     });
 
     //add to map
-    L.control.layers(baseMaps).addTo(myMap);
+    // L.control.layers(baseMaps).addTo(myMap);
 
     return myMap;   
 }
@@ -102,5 +102,5 @@ Promise.all(jsonFiles.map(file => d3.json(file))).then(function(responses) {
         });
     }
     //add the control to allow users to turn layers on and off
-    L.control.layers(baseMaps, overlayMaps).addTo(map);
+    L.control.layers(baseMaps, overlayMaps, {collapsed: false }).addTo(map);
 }); 

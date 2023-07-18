@@ -612,133 +612,6 @@ function visuals(sample) {
             }
         };
         Plotly.newPlot('severity',severityPie,layout)
-        //creating all the pie charts for the various severity and data types
-        //fatal weather
-        // let fatalWeatherPie = [{
-        //     values: fatalWeatherCounts,
-        //     labels: fatalWeatherTypes,
-        //     type: 'pie'
-        // }];
-        // layout = {
-        //     height: 500,
-        //     width: 500,
-        //     title: {
-        //         text:"Weather During Fatal Accidents"
-        //     }
-        // };
-        // Plotly.newPlot('fatalWeatherPie',fatalWeatherPie, layout);
-        // //serious weather
-        // let severeWeatherPie = [{
-        //     values: severeWeatherCounts,
-        //     labels: severeWeatherTypes,
-        //     type: 'pie'
-        // }];
-        // layout = {
-        //     height: 500,
-        //     width: 500,
-        //     title: {
-        //         text:"Weather During Serious Accidents"
-        //     }
-        // };
-        // Plotly.newPlot('severeWeatherPie',severeWeatherPie, layout)
-        // //slight weather
-        // let slightWeatherPie = [{
-        //     values: slightWeatherCounts,
-        //     labels: slightWeatherTypes,
-        //     type: 'pie'
-        // }];
-        // layout = {
-        //     height: 500,
-        //     width: 500,
-        //     title: {
-        //         text:"Weather During Slight Accidents"
-        //     }
-        // };
-        // Plotly.newPlot('slightWeatherPie',slightWeatherPie, layout)
-        // //fatal lighting
-        // let fatalLightingPie = [{
-        //     values: fatalLightingCounts,
-        //     labels: fatalLightingTypes,
-        //     type: 'pie'
-        // }];
-        // layout = {
-        //     height: 500,
-        //     width: 500,
-        //     title: {
-        //         text:"Lighting During Fatal Accidents"
-        //     }
-        // };
-        // Plotly.newPlot('fatalLightingPie',fatalLightingPie, layout);
-        // //serious lighting
-        // let severeLightingPie = [{
-        //     values: severeLightingCounts,
-        //     labels: severeLightingTypes,
-        //     type: 'pie'
-        // }];
-        // layout = {
-        //     height: 500,
-        //     width: 500,
-        //     title: {
-        //         text:"Lighting During Serious Accidents"
-        //     }
-        // };
-        // Plotly.newPlot('severeLightingPie',severeLightingPie, layout);
-        // //slight lighting
-        // let slightLightingPie = [{
-        //     values: slightLightingCounts,
-        //     labels: slightLightingTypes,
-        //     type: 'pie'
-        // }];
-        // layout = {
-        //     height: 500,
-        //     width: 500,
-        //     title: {
-        //         text:"Lighting During Slight Accidents"
-        //     }
-        // };
-        // Plotly.newPlot('slightLightingPie',slightLightingPie, layout);
-        // //fatal road
-        // let fatalRoadPie = [{
-        //     values: fatalRoadCounts,
-        //     labels: fatalRoadTypes,
-        //     type: 'pie'
-        // }];
-        // layout = {
-        //     height: 500,
-        //     width: 500,
-        //     title: {
-        //         text:"Road Conditions During Fatal Accidents"
-        //     }
-        // };
-        // Plotly.newPlot('fatalRoadPie',fatalRoadPie, layout);
-        // //serious road
-        // let severeRoadPie = [{
-        //     values: severeRoadCounts,
-        //     labels: severeRoadTypes,
-        //     type: 'pie'
-        // }];
-        // layout = {
-        //     height: 500,
-        //     width: 500,
-        //     title: {
-        //         text:"Road Conditions During Serious Accidents"
-        //     }
-        // };
-        // Plotly.newPlot('severeRoadPie',severeRoadPie, layout);
-        // //slight road
-        // let slightRoadPie = [{
-        //     values: slightRoadCounts,
-        //     labels: slightRoadTypes,
-        //     type: 'pie'
-        // }];
-        // layout = {
-        //     height: 500,
-        //     width: 500,
-        //     title: {
-        //         text:"Road Conditions During Slight Accidents"
-        //     }
-        // };
-        // Plotly.newPlot('slightRoadPie',slightRoadPie, layout);
         //fatal cars
         let fatalCarsPie = [{
             values: fatalCarsCounts,
@@ -785,36 +658,46 @@ function visuals(sample) {
 };
 
 function toggleSelectedBar() {
-  var select = document.getElementById("bar-select");
-  var selectedValue = select.value;
+    var select = document.getElementById("bar-select");
+    var selectedValue = select.value;
 
-  var bars = document.getElementsByClassName("bar");
+    var bars = document.getElementsByClassName("bar");
 
-  for (var i = 0; i < bars.length; i++) {
-    if (bars[i].id === selectedValue) {
-      bars[i].style.display = "block";
-    } else {
-      bars[i].style.display = "none";
+    for (var i = 0; i < bars.length; i++) {
+        if (bars[i].id === selectedValue) {
+        bars[i].style.display = "block";
+        } else {
+        bars[i].style.display = "none";
+        }
     }
-  }
-}
-
-function init() {
+};
+  
+function toggleSelectedPie() {
+    var select = document.getElementById("pie-select");
+    var selectedValue = select.value;
+  
+    var pies = document.getElementsByClassName("pie");
+  
+    for (var i = 0; i < pies.length; i++) {
+      if (pies[i].id === selectedValue) {
+        pies[i].style.display = "block";
+      } else {
+        pies[i].style.display = "none";
+      }
+    }
+};
+  
+  function init() {
     let selector = d3.select("#selDataset");
     toggleSelectedBar(first=true);
+    toggleSelectedPie(first=true);
     
 
     visuals(2017);
-    // buildData(2018);
-    
-    //drop down menu for data from different years
-    // layers for the map for various years and possibly severity of injury
 };
 
 function changeData(newSample) {
     visuals(newSample);
-    // buildData(newSample);
-
     };
 
 init();

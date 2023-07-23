@@ -1,41 +1,4 @@
-// function buildData(sample) {
-
-    //Access the data
-    
-
-    
-
-    // url = "../Data/Accidents " + sample + ".geojson"
-
-    // d3.json(url).then((data) => {
-        
-    //     let accidentCount = 0
-
-        
-
-    //     let road = data.features.properties["Road Surface"];
-    //     let light = data.features.properties["Lighting Conditions"];
-    //     let weather = data.features.properties["Weather Conditions"];
-    //     let result = data.features
-
-    //     for(i = 0; i < result; i++)
-
-    //     let panel = d3.select("#sample")
-
-
-    //     panel.html("")
-
-        
-// };
-    // });
-
-    //Create visuals
 function visuals(sample) {
-// cluster markers - accident location - hover text with accident details
-// maybe bar chart for accidents per road type?
-// bubble chart by either weather type/road type/time of day/lighting/vehicle type
-// number of vehicles in accident vs time of day
-//edit geojson to get the day of the week
 
     url = "../Data/accident_" + sample + ".geojson"
     
@@ -53,8 +16,10 @@ function visuals(sample) {
         let victim3 = [];
         let victim4 = [];
         let victim5 = [];
+        let totalAccidentsCount = 0;
         for(i =0; i < sampleData.length;i++){
             currentData = sampleData[i]
+            totalAccidentsCount++;
             if (weather.includes(currentData.properties["Weather Conditions"])){
 
             }
@@ -89,6 +54,8 @@ function visuals(sample) {
                 victim4.push(currentData.properties["Casualty Severity 4"])
                 victim5.push(currentData.properties["Casualty Severity 5"])
             };
+            const h5Element = document.getElementById("totalAccidents");
+            h5Element.textContent = "Total Accidents: " + totalAccidentsCount;
         };
         
         

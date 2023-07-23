@@ -144,5 +144,3 @@ Promise.all(jsonFiles.map(file => d3.json(file))).then(function(responses) {
     L.control.layers(baseMaps, overlayMaps, {collapsed: false }).addTo(map);
 });
 
-
-

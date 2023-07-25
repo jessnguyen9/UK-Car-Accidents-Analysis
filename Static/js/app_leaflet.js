@@ -8,24 +8,24 @@ let iconOptions = {
 //create red icon w/ local url
 let redIcon = L.icon({
     ...iconOptions, 
-    iconUrl: "../png/icons8-map-marker-48_red.png"
+    iconUrl: "Static/png/icons8-map-marker-48_red.png"
 });
 console.log('Red Icon:', redIcon.options.iconUrl, redIcon.options.iconSize);
 //create blue icon w/ local url
 let blueIcon = L.icon({
     ...iconOptions, 
-    iconUrl: "../png/icons8-map-marker-48_blue.png"
+    iconUrl: "Static/png/icons8-map-marker-48_blue.png"
 });
 console.log('Blue Icon:', blueIcon.options.iconUrl, blueIcon.options.iconSize);
 //create green icon w/ local url
 let greenIcon = L.icon({
     ...iconOptions, 
-    iconUrl: "../png/icons8-map-marker-48_green.png"
+    iconUrl: "Static/png/icons8-map-marker-48_green.png"
 });
 //create yellow icon w/ local url
 let yellowIcon = L.icon({
     ...iconOptions, 
-    iconUrl: "../png/icons8-map-marker-48_yellow.png"
+    iconUrl: "Static/png/icons8-map-marker-48_yellow.png"
 });
 //create map object
 function createMap() {
@@ -87,10 +87,10 @@ function createMarkers(response, layerGroup, icon) {
 
 // local location of geoJSON files
 let jsonFiles = [
-    "Data/Accident_2017.geojson",
-    "Data/Accident_2018.geojson",
-    "Data/Accident_2019.geojson",
-    "Data/Accident_2020.geojson"
+    "https://dataworks.calderdale.gov.uk/download/24qdx/29j/Accident%202017.geojson",
+    "https://dataworks.calderdale.gov.uk/download/24qdx/enf/accident%202018.geojson",
+    "https://dataworks.calderdale.gov.uk/download/24qdx/qtk/Accidents%202019.geojson",
+    "https://dataworks.calderdale.gov.uk/download/24qdx/zjf/Calderdale%20Collisions%202020%20SS.geojson"
 ];
 // github links to raw data
 // let jsonFiles = [

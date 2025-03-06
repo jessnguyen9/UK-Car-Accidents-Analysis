@@ -4,6 +4,9 @@
 This project analyzes and visualizes accident data from Calderdale, UK, using JavaScript, Python (Flask), and SQL. The goal is to provide an interactive dashboard and a dynamic map to explore accident trends over multiple years, helping users understand factors such as weather, lighting, and road conditions that contribute to accidents.
 This code was designed to read in GEOJSON accident data sourced from the Calderdale district of West Minster, UK.
 
+## Team Members
+Sarah, Jess, Eric
+
 ## Technologies Used
 - **JavaScript** (D3.js, Leaflet.js, Plotly.js) for data visualization
   

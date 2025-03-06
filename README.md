@@ -14,16 +14,22 @@ This code was designed to read in GEOJSON accident data sourced from the Calderd
 - **Interactive Leaflet Map:** Displays accident locations with color-coded markers based on the year.
 - **Dashboard with Bar and Pie Charts:** Allows users to filter accident data by year and analyze trends in accident severity, weather conditions, lighting, and road surfaces.
 - **Flask API:** Serves accident data from an SQLite database and provides access to static GeoJSON files.
-It contains:
-    - JavaScript code that renders a leaflet map
-    - Javascript code that renders an interactive user dashboard
-     - HTML and CSS files
-     - Flask application for retrieving accident data by the year from a SQLite database.
-   
-    Before using this code:
-        - Check that the geojson files and png files for the markers are stored in their correct folders.
-        - Install required dependencies d3.js and plotly libraries.
-        - Include correct <script> tags in your HTML and CSS files to load these libraries. 
+- **HTML & CSS:** Structures and styles the web application.
+
+## Data Processing
+### Data Acquisition
+- Data sourced from GeoJSON files containing accident records.
+- SQLite database storing structured accident data.
+
+### Data Preparation
+- Cleaning: Removed incomplete or missing values.
+- Standardization: Ensured consistency in data formats.
+- Data Transformation: Extracted relevant features like accident severity, weather conditions, and road surface.
+
+### Data Analysis
+- Mapping: Used Leaflet.js to visualize accident locations.
+- Filtering & Aggregation: Grouped data by year, severity, and other attributes.
+- Interactive Charts: Implemented bar and pie charts using Plotly.js for detailed analysis.
 
 ## Javascript: Leaflet Map
 

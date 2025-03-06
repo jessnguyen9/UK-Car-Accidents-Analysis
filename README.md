@@ -6,8 +6,11 @@ This code was designed to read in GEOJSON accident data sourced from the Calderd
 
 ## Technologies Used
 - **JavaScript** (D3.js, Leaflet.js, Plotly.js) for data visualization
+  
 - **Python** (Flask) for backend API and data retrieval
+  
 - **SQLite** for database storage
+  
 - **HTML & CSS** for frontend interface
 
 ## Features

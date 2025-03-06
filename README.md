@@ -125,3 +125,13 @@ Step by Step Explination:
     This endpoint serves static GeoJSON files stored in the geojson directory. 
     
     It allows clients to access and download GeoJSON files for visualizing accident data on maps or other applications.
+
+## Future Improvements
+Implement machine learning models to predict accident-prone areas.
+
+Add real-time accident reporting using external APIs.
+
+Enhance visualizations with additional filtering options.
+
+## Conclusion
+This project demonstrates data acquisition, cleaning, analysis, and visualization techniques. By integrating SQL, JavaScript, and Python, we created an interactive tool for exploring accident trends and identifying key risk factors.
